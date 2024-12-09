@@ -1,0 +1,24 @@
+name: action for practice
+on: 
+  push:
+    branches:
+      - main
+      - 'feature/*'
+    
+    workflows_dispatch:
+
+jobs:
+  my-first_job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        run: actions/checkout@v4
+
+      - name: Greet user
+        run: echo Hi user how can I help you
+
+      - name: List all the files in the repo
+        run: ls 
+
+      - name: Read the text file found in the repo
+        run: cat README.md
