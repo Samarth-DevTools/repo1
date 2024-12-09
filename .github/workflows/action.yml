@@ -24,7 +24,7 @@ jobs:
 
   Test-2:
     needs: build-1
-    runds-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Download Dragon TExt File
         uses: actions/download-artifact@v3
