@@ -4,7 +4,6 @@ on:
     branches:
       - main
       - 'feature/*'
-    
     workflows_dispatch:
 
 jobs:
@@ -18,11 +17,10 @@ jobs:
         run: cowsay -f dragon "Run for the cover" >> dragon.txt
 
       - name: Upload Dragon text file
-        run: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: dragon-text-file
           path: dragon.txt
-
 
   Test-2:
     needs: build-1
@@ -38,7 +36,7 @@ jobs:
 
 
   deploy-3:
-    needs: test-3
+    needs: [Test-2]
     runs-on: ubuntu-latest
     steps:
       - name: Download Dragon Text file
