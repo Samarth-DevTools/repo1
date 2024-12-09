@@ -4,14 +4,14 @@ on:
     branches:
       - main
       - 'feature/*'
-    workflows_dispatch:
+  workflow_dispatch:
 
 jobs:
   build-1:
     runs-on: ubuntu-latest
     steps:
       - name: Install Cowsay Program
-        uses: sudo apt-get install cowsay -y 
+        run: sudo apt-get install cowsay -y 
 
       - name: Execute cowsay CMD
         run: cowsay -f dragon "Run for the cover" >> dragon.txt
