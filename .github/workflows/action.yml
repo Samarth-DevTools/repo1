@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
-        run: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Greet user
         run: echo Hi user how can I help you
